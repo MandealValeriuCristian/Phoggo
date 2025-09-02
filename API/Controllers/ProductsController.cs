@@ -22,7 +22,7 @@ public class ProductsController : ControllerBase
         return await _context.Products.ToListAsync();
     }
 
-    [HttpGet]
+    [HttpGet("{id:int}")]
     public async Task<ActionResult<Product>> GetProduct(int id)
     {
         var product = await _context.Products.FindAsync(id);
